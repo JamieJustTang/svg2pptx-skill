@@ -96,6 +96,12 @@ beats auto-tracing — you get editable *text* and clean shapes, not uneditable 
 2. Paste the prompt below. → 3. Save the output as `figure.svg`. → 4. `python3 convert.py figure.svg`.
 5. If the quality gate errors, paste it back and ask the model to fix — repeat until clean.
 
+**Real example** — a flat PNG screenshot (note its broken `□` glyph and clipped text) redrawn from
+the prompt and converted in one command. The output opens in PowerPoint with every box, label and
+arrow individually editable — and the `→` even renders correctly again:
+
+![Real case: a PNG screenshot becomes a fully-editable PPTX](docs/realcase-png-to-pptx.png)
+
 <details>
 <summary><b>📋 Click to copy the ready-to-use prompt</b> (canonical copy: <a href="references/png-to-svg-prompt.md"><code>references/png-to-svg-prompt.md</code></a>)</summary>
 

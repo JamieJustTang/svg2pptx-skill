@@ -88,6 +88,11 @@ python3 convert.py examples/filtration_demo.svg
 2. 粘贴下面这段提示词。→ 3. 把输出存成 `figure.svg`。→ 4. `python3 convert.py figure.svg`。
 5. 若质检报错,把报错贴回去让模型修——反复几轮直到通过。
 
+**真实案例** —— 一张纯 PNG 截图(注意它丢失的 `□` 字形和被裁掉的文字),用上面的提示词重画、再一条命令
+转换。产物在 PowerPoint 里打开,每个框、文字、箭头都能单独编辑——而且那个 `→` 也重新正确显示了:
+
+![真实案例:一张 PNG 截图变成可逐个编辑的 PPTX](docs/realcase-png-to-pptx.png)
+
 <details>
 <summary><b>📋 点击复制可直接使用的提示词</b>(canonical 版本见 <a href="references/png-to-svg-prompt.md"><code>references/png-to-svg-prompt.md</code></a>)</summary>
 
