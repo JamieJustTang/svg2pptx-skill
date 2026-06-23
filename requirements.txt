@@ -1,0 +1,10 @@
+# svg2pptx-skill dependencies
+python-pptx>=0.6.21    # native PPTX / DrawingML writing
+Pillow>=9.0.0          # image sizing & aspect handling
+lxml>=4.9.0            # XML backend for python-pptx
+svglib>=1.5.0          # SVG→PNG fallback (legacy-Office compatibility)
+reportlab>=4.0.0       # backend for svglib
+numpy>=1.20.0          # image aspect math
+
+# Optional (preferred PNG fallback renderer; needs system cairo, e.g. `brew install cairo`):
+#   pip install cairosvg

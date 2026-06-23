@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="518" viewBox="0 0 2048 518">
+  <title>过滤过程与传播泡沫 — 可编辑矢量复刻</title>
+  <desc>Editable vector recreation of the supplied diagram at 2048 × 518 pixels.</desc>
+  <defs>
+    <linearGradient id="pill1" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fdeeea"/>
+      <stop offset="1" stop-color="#fcede9"/>
+    </linearGradient>
+    <linearGradient id="pill2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fabbab"/>
+      <stop offset="1" stop-color="#fbbeac"/>
+    </linearGradient>
+    <linearGradient id="pill3" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#eb462f"/>
+      <stop offset="1" stop-color="#e9442c"/>
+    </linearGradient>
+    <linearGradient id="transferGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f7a18f"/>
+      <stop offset="0.321" stop-color="#f7a18f"/>
+      <stop offset="0.321" stop-color="#f58d79"/>
+      <stop offset="0.592" stop-color="#f58d79"/>
+      <stop offset="0.592" stop-color="#f1705a"/>
+      <stop offset="0.723" stop-color="#f1705a"/>
+      <stop offset="0.723" stop-color="#ec4128"/>
+      <stop offset="1" stop-color="#ec4128"/>
+    </linearGradient>
+    <marker id="arrowBlue" markerWidth="12" markerHeight="12" refX="10.5" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 L10.5 6 L1 11" fill="none" stroke="#6f82ad" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="12" markerHeight="12" refX="10.5" refY="6" orient="auto" markerUnits="strokeWidth">
+      <path d="M1 1 L10.5 6 L1 11" fill="none" stroke="#ef3f29" stroke-width="1.7" stroke-linecap="square" stroke-linejoin="miter"/>
+    </marker>
+  </defs>
+
+  <!-- background -->
+  <rect x="0" y="0" width="2048" height="518" fill="#fefefe"/>
+
+  <!-- top-right annotation -->
+  <text x="2026" y="42" text-anchor="end" textLength="564" lengthAdjust="spacingAndGlyphs" font-family="Arial, Helvetica, sans-serif" font-size="21.5" font-style="italic" fill="#6677a1">
+    <tspan>dialogue depth: ΔR² = 0.001 · </tspan><tspan fill="#ee3f2d">circulation: ΔR² = 0.216</tspan>
+  </text>
+  <text x="2025" y="75" text-anchor="end" textLength="593" lengthAdjust="spacingAndGlyphs" font-family="Arial, Helvetica, sans-serif" font-size="20.5" font-style="italic" fill="#6677a1">portability is organized by selection, not by dialogue depth.</text>
+
+  <!-- process pills -->
+  <rect x="29.5" y="102.5" width="567" height="99" rx="44" fill="url(#pill1)" stroke="#efc0b6" stroke-width="1.6"/>
+  <rect x="689.5" y="102.5" width="566" height="99" rx="44" fill="url(#pill2)" stroke="#de816c" stroke-width="1.6"/>
+  <rect x="1337.5" y="102.5" width="636" height="99" rx="44" fill="url(#pill3)" stroke="#d83220" stroke-width="1.6"/>
+
+  <!-- arrows between pills -->
+  <path d="M618 151.5 H668 M658 142 L668 151.5 L658 161" fill="none" stroke="#6f82ad" stroke-width="2.7" stroke-linecap="square" stroke-linejoin="miter"/>
+  <path d="M1272 151.5 H1322 M1312 142 L1322 151.5 L1312 161" fill="none" stroke="#6f82ad" stroke-width="2.7" stroke-linecap="square" stroke-linejoin="miter"/>
+
+  <!-- pill text -->
+  <g font-family="Arial, Helvetica, sans-serif" fill="#050505" text-anchor="middle">
+    <text x="327" y="148" textLength="294" lengthAdjust="spacingAndGlyphs" font-size="28" font-weight="700">Shared-prior baseline</text>
+    <text x="327" y="178" textLength="159" lengthAdjust="spacingAndGlyphs" font-size="24">candidate pool</text>
+
+    <text x="979" y="148" font-size="28" font-weight="700">Generative redundancy</text>
+    <text x="979" y="178" textLength="349" lengthAdjust="spacingAndGlyphs" font-size="24">sets the upper bound of transfer</text>
+
+    <text x="1652" y="148" textLength="123" lengthAdjust="spacingAndGlyphs" font-size="28" font-weight="700">Selection</text>
+    <text x="1655" y="178" textLength="494" lengthAdjust="spacingAndGlyphs" font-size="24">adoptability · exposure · community structure</text>
+  </g>
+
+  <!-- numeric callouts -->
+  <g font-family="Arial, Helvetica, sans-serif" fill="#050505" text-anchor="middle">
+    <text x="118" y="269" font-size="36" font-weight="700">100%</text>
+    <text x="117" y="301" textLength="141" lengthAdjust="spacingAndGlyphs" font-size="20.5">candidate pool</text>
+
+    <text x="666" y="268" font-size="35" font-weight="700">99.3%</text>
+    <text x="665" y="299" textLength="172" lengthAdjust="spacingAndGlyphs" font-size="20.5">author-shuffle null</text>
+    <text x="666" y="326" textLength="120" lengthAdjust="spacingAndGlyphs" font-size="20.5">upper bound</text>
+
+    <text x="1199" y="269" font-size="34.5" font-weight="700">84.1%</text>
+    <text x="1199" y="301" textLength="121" lengthAdjust="spacingAndGlyphs" font-size="20.5">cross-author</text>
+
+    <text x="1840" y="269" font-size="34.5" font-weight="700">~2%</text>
+    <text x="1844" y="297" textLength="163" lengthAdjust="spacingAndGlyphs" font-size="20.5">cross-community</text>
+    <text x="1844" y="324" textLength="245" lengthAdjust="spacingAndGlyphs" font-size="20.5">66% remain clique-bound</text>
+  </g>
+
+  <!-- selection labels -->
+  <g font-family="Arial, Helvetica, sans-serif" fill="#111" font-size="20" text-anchor="middle">
+    <text x="1378" y="326" textLength="114" lengthAdjust="spacingAndGlyphs">cross-author</text>
+    <text x="1522" y="320" textLength="98" lengthAdjust="spacingAndGlyphs">community</text>
+    <text x="1522" y="344" textLength="84" lengthAdjust="spacingAndGlyphs">boundary</text>
+  </g>
+
+  <!-- transfer area -->
+  <path d="M35 361 C246 361.3 454 364.3 665 367 C842 369.4 1020 372.4 1198 374 L1453 405.5 C1457 420 1463 444 1470 462 C1474 473 1478 481 1485 483.5 C1494 486 1510 486.2 1534 488 C1640 491.8 1800 492.7 1998 494.2 L1998 499 L35 496 Z" fill="url(#transferGrad)"/>
+
+  <!-- dashed guide lines -->
+  <g stroke="#ababab" stroke-width="1.15" stroke-dasharray="4 4">
+    <line x1="117" y1="319" x2="117" y2="361"/>
+    <line x1="665" y1="319" x2="665" y2="367"/>
+    <line x1="1199" y1="319" x2="1199" y2="374"/>
+    <line x1="1454" y1="290" x2="1454" y2="405"/>
+    <line x1="1843" y1="338" x2="1843" y2="494"/>
+  </g>
+
+  <!-- hardest-filter annotation -->
+  <text x="1537" y="435" font-family="Arial, Helvetica, sans-serif" font-size="24" font-style="italic" fill="#ef3f29">the hardest filter</text>
+  <path d="M1525 439 L1493 470 M1493 470 L1499 454 M1493 470 L1510 466" fill="none" stroke="#ef3f29" stroke-width="3.2" stroke-linecap="square" stroke-linejoin="miter"/>
+</svg>

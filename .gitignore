@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.Python
+build/
+dist/
+
+# venv
+.venv/
+venv/
+env/
+
+# OS
+.DS_Store
+
+# Working dirs / generated output
+svg_output/
+svg_final/
+backup/
+exports/
+*_tmp/
+svg2pptx_*/
