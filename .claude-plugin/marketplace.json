@@ -1,0 +1,20 @@
+{
+  "name": "svg2pptx",
+  "owner": {
+    "name": "Jamie Tang",
+    "url": "https://github.com/JamieJustTang"
+  },
+  "plugins": [
+    {
+      "name": "svg2pptx",
+      "source": ".",
+      "description": "Turn a flat AI-generated SVG into a fully-editable, native PowerPoint (DrawingML), then export to PDF/Keynote/Slides. One command; agent-friendly skill.",
+      "version": "1.0.0",
+      "author": { "name": "Jamie Tang" },
+      "homepage": "https://github.com/JamieJustTang/svg2pptx-skill",
+      "repository": "https://github.com/JamieJustTang/svg2pptx-skill",
+      "license": "MIT",
+      "keywords": ["svg", "pptx", "powerpoint", "drawingml", "svg-to-pptx", "vector", "ai-tools"]
+    }
+  ]
+}

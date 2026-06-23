@@ -2,6 +2,8 @@
 
 # svg2pptx-skill
 
+**English** · [简体中文](./README_zh.md)
+
 ### Turn a flat AI sketch into a **fully-editable vector PowerPoint** — in one command.
 
 *Every shape, label, arrow and gradient becomes a real PowerPoint object you can click, recolor and retype — then export to PDF, Keynote or Google Slides.*
@@ -81,6 +83,18 @@ python3 convert.py examples/filtration_demo.svg
 See [`examples/`](examples/) for the source SVGs paired with their converted `.pptx`.
 
 ---
+
+## Install as a Claude Code plugin (one click)
+
+This repo is also a Claude Code **plugin marketplace**. Inside Claude Code:
+
+```text
+/plugin marketplace add JamieJustTang/svg2pptx-skill
+/plugin install svg2pptx@svg2pptx
+```
+
+The skill becomes available immediately. After install, run the dependency step once
+(`pip install -r requirements.txt`) in the cached plugin directory so the Python engine can run.
 
 ## Using it as an AI-agent skill
 
