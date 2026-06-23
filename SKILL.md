@@ -18,8 +18,17 @@ PowerPoint. The opposite of pasting a picture onto a slide.
 
 - The user generated a draft diagram as **PNG or SVG** (e.g. asked GPT/Claude to draw a mechanism,
   architecture, flow, or chart) and now wants an **editable** deck, not a flat export.
-- PNG input → first have the model **redraw it as SVG** (LLMs emit SVG reliably), then run this skill.
+- PNG input → first have a vision model **redraw it as a spec-compliant SVG** using the ready-made
+  prompt in [`references/png-to-svg-prompt.md`](references/png-to-svg-prompt.md) (recommended: GPT-5.5
+  Pro / Claude Opus 4.6+), then run this skill. (Auto-tracing is worse — it turns text into outlines.)
 - The user wants to finish a figure in PowerPoint and export to **PDF / Keynote / Google Slides**.
+
+## PNG → SVG → PPTX (when the input is a raster image)
+
+If the user gives a PNG/JPG: read [`references/png-to-svg-prompt.md`](references/png-to-svg-prompt.md),
+apply that prompt to the image (yourself, if you are vision-capable) to produce a clean editable SVG
+that obeys [`references/shared-standards.md`](references/shared-standards.md), then continue with the
+fast/controlled path below. If the quality gate flags an issue, re-author the SVG and retry.
 
 ## Fast path (one command)
 

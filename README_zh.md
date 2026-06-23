@@ -76,6 +76,77 @@ python3 convert.py examples/filtration_demo.svg
 
 ---
 
+## 只有 PNG?一段提示词先把它变成干净 SVG
+
+本工具转的是 **SVG**,不是像素。如果你的图是 **PNG/JPG**(截图,或 AI 草图),先让一个强视觉模型
+**按规范重画成 SVG**,再 `convert.py`。这比自动描摹好得多——你得到的是**可编辑的文字**和干净形状,
+而不是一堆改不动的轮廓。
+
+**推荐模型:** GPT-5.5 Pro、Claude Opus 4.6 及以上(4.8 最新),或任意当前 SOTA 模型。
+
+1. 打开推荐模型的对话,**上传你的 PNG**。
+2. 粘贴下面这段提示词。→ 3. 把输出存成 `figure.svg`。→ 4. `python3 convert.py figure.svg`。
+5. 若质检报错,把报错贴回去让模型修——反复几轮直到通过。
+
+<details>
+<summary><b>📋 点击复制可直接使用的提示词</b>(canonical 版本见 <a href="references/png-to-svg-prompt.md"><code>references/png-to-svg-prompt.md</code></a>)</summary>
+
+```
+You are an expert technical illustrator and SVG engineer. I am attaching a raster image (PNG/JPG)
+of a diagram — a scientific figure, mechanism, architecture, flowchart, or chart. Redraw it as ONE
+clean, fully EDITABLE SVG that faithfully reproduces the original AND converts losslessly into native
+PowerPoint shapes (DrawingML).
+
+## Fidelity — match the original
+- Reproduce the layout, relative positions, sizes, and colors (sample the exact HEX values).
+- Reproduce EVERY text label verbatim, in its original language — do not translate, summarize, or
+  invent text. Keep all text as real <text> elements (editable), never as outlines or images.
+- Redraw every visual as a vector primitive (rect, circle, ellipse, line, path, polygon) — do NOT
+  embed the bitmap.
+- Preserve arrow directions and relationship semantics (activation / flow vs. inhibition).
+
+## Canvas
+- Set <svg> width, height, and viewBox to the image's pixel dimensions; width and height MUST equal
+  the viewBox (e.g. width="1280" height="720" viewBox="0 0 1280 720").
+- Add a background <rect> for the page color. Work in pixels only (never pt).
+
+## Hard rules — PowerPoint/DrawingML compatibility (do NOT violate any)
+- Inline attributes ONLY. No <style>, no class, no CSS, no @font-face.
+- BANNED elements/attrs: mask, <foreignObject>, <symbol>+<use>, textPath, <animate>/<set>, <script>,
+  <iframe>, group opacity (<g opacity>), image opacity, and rgba()/hsla() colors.
+- Colors: HEX only. Transparency via fill-opacity / stroke-opacity.
+- Characters: write typography & symbols as RAW Unicode (— – → ± × ÷ ≤ ≥ ≈ ° α β γ · …). Escape ONLY
+  the XML reserved characters as entities: & < > " '  →  &amp; &lt; &gt; &quot; &apos;. NEVER use HTML
+  named entities (&nbsp; &mdash; &rarr; &alpha; …) — they abort the conversion.
+- Text: one logical line = ONE <text> element; use inline <tspan> only for color/weight/size runs on
+  that same line. Inline <tspan> must NOT carry x, y, or dy (those start a new line and split the
+  frame) — use dx only for kerning. For separate lines or columns, use separate <text> elements (or
+  an outer line-break <tspan x=".." dy="..">).
+- Fonts: every font-family stack must END with a pre-installed family (Arial, Helvetica, Calibri,
+  Times New Roman, Microsoft YaHei, SimSun, or Consolas).
+- Arrows: use marker-start / marker-end ONLY with a <marker> defined in <defs>, with orient="auto",
+  a triangle / diamond / circle (closed) shape, and the marker's fill EQUAL to the line's stroke
+  color. Never reference a marker id you did not define. For inhibition (⊥ / T-bar), draw an explicit
+  short perpendicular <line>, not a marker.
+- clip-path is allowed ONLY on <image> (with a single shape child in its <clipPath>). For non-image
+  shapes, draw the target geometry directly — do not clip.
+- Group related elements in <g id="..."> with descriptive ids (each becomes a PowerPoint group).
+- Effects that are fine: linearGradient/radialGradient in <defs> (fill="url(#id)"),
+  stroke-dasharray, transform="rotate(angle, cx, cy)". For donut/pie sectors, compute arc endpoints
+  with trigonometry (x=cx+r·cosθ, y=cy+r·sinθ; start at -90°; large-arc flag = 1 when the sector > 180°).
+
+## Self-check before you answer
+Confirm: width/height == viewBox; NO banned features; NO HTML named entities; NO x/y/dy on inline
+<tspan>; every referenced marker is defined with a matching color; all text is present and verbatim.
+
+## Output
+Output ONLY the SVG code, starting with <svg ...> and ending with </svg>. No prose, no markdown fences.
+```
+
+</details>
+
+---
+
 ## 作为 Claude Code 插件一键安装
 
 本仓库同时也是一个 Claude Code **插件市场(plugin marketplace)**。在 Claude Code 里:
